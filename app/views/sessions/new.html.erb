@@ -1,0 +1,24 @@
+<div class="jumbotron">
+       <h1 class="text-center">Sing in</h1>
+       <%= flash.now[:notice] if flash.now[:notice] %>
+
+       <div class="text-center">
+              <%= form_with(model: @user, url: sign_in_path, local:true) do |f| %>
+
+                     <div class="field">
+                            <%= f.label "Email" %>
+                            <%= f.email_field :email %>
+                     </div>
+
+                     <div class="field">
+                            <%= f.label "Password" %>
+                            <%= f.password_field :password %>
+                     </div>
+
+                     <div class="field">
+                            <%= f.submit "Crear cuenta nueva"%>
+                     </div>
+
+              <%end%>
+       </div>
+</div>

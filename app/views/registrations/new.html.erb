@@ -1,0 +1,30 @@
+<div class="jumbotron text-center">
+       <h1 class="text-center">Crear una nueva cuenta</h1>
+
+       <%= form_with(model: @user, url: users_registration_path , local:true) do |f| %>
+              <div class="field">
+                     <%= f.label "Nombre" %>
+                     <%= f.text_field :name %>
+              </div>
+
+              <div class="field">
+                     <%= f.label "Email" %>
+                     <%= f.email_field :email %>
+              </div>
+
+              <div class="field">
+                     <%= f.label "Password" %>
+                     <%= f.password_field :password %>
+              </div>
+
+              <div class="field">
+                     <%= f.label "Confirmar password" %>
+                     <%= f.password_field :password_confirmation %>
+              </div>
+
+              <div class="field">
+                     <%= f.submit "Crear cuenta nueva"%>
+              </div>
+
+       <%end%>
+</div>

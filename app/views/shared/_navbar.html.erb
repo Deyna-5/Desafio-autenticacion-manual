@@ -22,7 +22,12 @@
             <li><%=link_to 'My PicStories', stories_path %></li>
             <li><a href="#">'My Profile'</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">'Sign Out'</a></li>
+            <% if logged? %>
+              <li> <%= link_to "Sign Out", destroy_user_sessions_path(current_user), method: :delete %> </li>
+            <%else%>
+              <li> <%= link_to "Sign In", new_user_session_path %> </li>
+              <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
+            <%end%>
           </ul>
         </li>
       </ul>
